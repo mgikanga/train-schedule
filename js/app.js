@@ -46,7 +46,7 @@ var config = {
     $("#frequency-input").val("");
   });
   
-  // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+  // 3. Create Firebase event for adding train to the database and a row in the html when a user adds an entry
   database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   
     console.log(childSnapshot.val());
@@ -64,13 +64,12 @@ var config = {
     console.log(trainFrequency);
   
     // Prettify the train start
-    //var trainStartPretty = moment.unix(trainStart).format("HH:MM");
+   
     let firstTimeConverted = moment(trainStart, "HH:mm").subtract(1, "years");
     let currentTime = moment();
     let diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     // To calculate the arrival time
-    //var trainArrival = moment().diff(moment.unix(trainStart, "X"), "minutes");
-    //console.log(trainArrival);
+    
   
     // Time apart (remainder)
     let trainRemainder = diffTime % trainFrequency;
