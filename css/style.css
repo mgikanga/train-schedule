@@ -1,5 +1,9 @@
 .jumbotron{
     background-image: url('../images/giphy.gif'); 
-    color: lightcoral;
+    color: rgb(0, 110, 255);
     padding: 10%;
+    text-shadow: 2px purple;
+}
+h3{
+   color: gray;
 }
